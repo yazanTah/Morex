@@ -23,7 +23,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [debounceSearchTerm, setDebounceSearchTerm] = useState("");
 
-  useDebounce(() => setDebounceSearchTerm(searchTerm), 500, [searchTerm]);
+  useDebounce(() => setDebounceSearchTerm(searchTerm), 1000, [searchTerm]);
 
   const fetchMovies = async (query = "") => {
     setIsLoading(true);
@@ -63,6 +63,10 @@ const App = () => {
     }
   };
 
+  const handleSearch = () => {
+    fetchMovies(searchTerm);
+  };
+
   useEffect(() => {
     fetchMovies(debounceSearchTerm);
   }, [debounceSearchTerm]);
@@ -72,6 +76,10 @@ const App = () => {
       <div className="pattern" />
 
       <div className="wrapper">
+        <div className="flex justify-center">
+          <img src="./logo.png" alt="logo icon" height={60} width={60} />
+        </div>
+
         <header>
           <img src="./hero.png" alt="Hero Banner" />
 
@@ -80,7 +88,11 @@ const App = () => {
             Without the Hassle
           </h1>
 
-          <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          <Search
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            onSubmit={handleSearch}
+          />
         </header>
 
         <section className="all-movies">
