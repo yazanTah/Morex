@@ -13,12 +13,12 @@ const MovieDetails = () => {
       try {
         const response = await fetch(
           `https://api.themoviedb.org/3/movie/${id}?api_key=${
-            import.meta.env.VITE_TMDB_API_KEY
+            import.meta.env.TMDB_API_KEY
           }&language=en-US&include_adult=true`,
           {
             headers: {
               accept: "application/json",
-              Authorization: `Bearer ${import.meta.env.VITE_TMDB_API_KEY}`,
+              Authorization: `Bearer ${import.meta.env.TMDB_API_KEY}`,
             },
           }
         );
