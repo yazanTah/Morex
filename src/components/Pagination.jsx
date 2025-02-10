@@ -10,7 +10,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             : "bg-[#0F0D23] hover:bg-[#1E213A]"
         }`}
       >
-        <img src="/public/back-page.svg" />
+        <img src="/back-page.svg" />
       </button>
 
       <div className="flex items-center gap-2">
@@ -28,7 +28,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             : "bg-[#0F0D23] hover:bg-[#1E213A]"
         }`}
       >
-        <img src="/public/next-page.svg" />
+        <img src="/next-page.svg" />
       </button>
     </div>
   );
