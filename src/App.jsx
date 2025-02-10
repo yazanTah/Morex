@@ -44,7 +44,6 @@ const App = () => {
       if (!response.ok) {
         throw new Error("Failed to fetch movies");
       }
-
       const data = await response.json();
       setMovieList(data.results || []);
       setTotalPages(Math.min(data.total_pages, 500)); // TMDB limits to 500 pages

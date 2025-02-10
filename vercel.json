@@ -1,10 +1,11 @@
 {
   "env": {
-    "VITE_TMDB_API_KEY": "@tmdb_api_key"
+    "VITE_TMDB_API_KEY": "${TMDB_API_KEY}"
   },
   "build": {
     "env": {
-      "VITE_TMDB_API_KEY": "@tmdb_api_key"
+      "VITE_TMDB_API_KEY": "${TMDB_API_KEY}"
     }
-  }
+  },
+  "routes": [{ "src": "/(.*)", "dest": "/" }]
 }
